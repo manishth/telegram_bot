@@ -28,7 +28,7 @@ class BotHandler:
         else:
             last_update = get_result[len(get_result)]
 
-
+token = "318923032:AAE4-qHn-k2umzPBLzriUlZsRZjNYXlN7Cc"
 greet_bot = BotHandler(token)
 greetings = ('hello', 'hi', 'greetings', 'sup')
 now = datetime.datetime.now()
@@ -62,40 +62,3 @@ if __name__ == '__main__':
         main()
     except KeyboardInterrupt:
         exit()
-
-
-# url = "https://api.telegram.org/bot318923032:AAE4-qHn-k2umzPBLzriUlZsRZjNYXlN7Cc/"
-#
-# def main():
-#     update_id = last_update(get_updates_json(url))['update_id']
-#     while True:
-#         if update_id == last_update(get_updates_json(url))['update_id']:
-#             send_message(get_chat_id(last_update(get_updates_json(url))), 'test')
-#             update_id += 1
-#     sleep(1)
-
-# def get_updates_json(request):
-#     params = {'timeout': 100, 'offset': None}
-#     response = requests.get(request + 'getUpdates', data=params)
-#     return response.json()
-#
-# def last_update(data):
-#     results = data['result']
-#     total_updates = len(results)
-#     return results[total_updates]
-#
-# def get_chat_id(update):
-#     chat_id = update['message']['chat']['id']
-#     return chat_id
-#
-# def send_message(chat, text):
-#     params = {'chat_id': chat, 'text': text}
-#     response = requests.post(url + 'sendMessage', data = params)
-#     return response
-#
-# chat_id = get_chat_id(last_update(get_updates_json(url)))
-#
-# send_message(chat_id, "Your message goes here")
-#
-# if __name__ == '__main__':
-#     main()
